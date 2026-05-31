@@ -1,33 +1,82 @@
-<link rel="stylesheet" href="style.css">
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Каталог</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <ul>
         <li><a href="index.html">Главная</a></li>
         <li><a href="catalog.html">Каталог</a></li>
     </ul>
+
     <hr>
+
     <h1>Каталог</h1>
-    <img src="img/brake_pads.jpg" width="200">
-    <br>
-    <a href="brake.html">Тормозные колодки</a>
+
+    <label for="filter">Фильтр товаров:</label>
+    <select id="filter">
+        <option value="all">Все товары</option>
+        <option value="brakes">Тормозные колодки</option>
+        <option value="filters">Масляные фильтры</option>
+        <option value="plugs">Свечи зажигания</option>
+        <option value="lights">Фары</option>
+    </select>
+
     <hr>
-    <img src="img/oil_filter.jpg" width="200">
-    <br>
-    <a href="filter.html">Масляный фильтр</a>
+
+    <div class="product" data-category="brakes">
+        <img src="img/brake_pads.jpg" width="200" alt="Тормозные колодки">
+        <h3>Тормозные колодки</h3>
+        <p>Цена: 4500 руб.</p>
+        <button class="add-to-cart" data-id="1">Добавить в корзину</button>
+    </div>
+
     <hr>
-    <img src="img/spark_plugs.jpg" width="200">
-    <br>
-    <a href="plugs.html">Свечи зажигания</a>
+
+    <div class="product" data-category="filters">
+        <img src="img/oil_filter.jpg" width="200" alt="Масляный фильтр">
+        <h3>Масляный фильтр</h3>
+        <p>Цена: 1200 руб.</p>
+        <button class="add-to-cart" data-id="2">Добавить в корзину</button>
+    </div>
+
     <hr>
-    <img src="img/headlight.jpg" width="200">
-    <br>
-    <a href="headlight.html">Передняя фара</a>
+
+    <div class="product" data-category="plugs">
+        <img src="img/spark_plugs.jpg" width="200" alt="Свечи зажигания">
+        <h3>Свечи зажигания</h3>
+        <p>Цена: 2500 руб.</p>
+        <button class="add-to-cart" data-id="4">Добавить в корзину</button>
+    </div>
+
     <hr>
+
+    <div class="product" data-category="lights">
+        <img src="img/headlight.jpg" width="200" alt="Передняя фара">
+        <h3>Передняя фара</h3>
+        <p>Цена: 7800 руб.</p>
+        <button class="add-to-cart" data-id="3">Добавить в корзину</button>
+    </div>
+
+    <hr>
+
+    <h2>Корзина</h2>
+
+    <ul id="cart-list"></ul>
+
+    <p id="total">Итого: 0 руб.</p>
+
+    <button id="pay-btn">Оплатить</button>
+    <button id="clear-cart">Очистить корзину</button>
+
+    <hr>
+
     <p>&copy; Все права защищены</p>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
